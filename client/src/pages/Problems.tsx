@@ -1,7 +1,7 @@
-// src/pages/Problems.tsx
 import { useState } from "react";
+import Navbar from "../components/Navbar";
 
-// 1. Define the TypeScript shape for a problem
+// Defining the TypeScript shape for a problem
 type Problem = {
   id: number;
   title: string;
@@ -12,9 +12,8 @@ type Problem = {
   };
 };
 
-// 2. The Reusable Question Card Component
+// Reusable Question Card Component
 function QuestionCard({ problem }: { problem: Problem }) {
-  // State to track which language tab is open ('cpp', 'java', 'python', or null for closed)
   const [activeLang, setActiveLang] = useState<"cpp" | "java" | "python" | null>(null);
 
   const toggleAnswer = (lang: "cpp" | "java" | "python") => {
@@ -27,7 +26,6 @@ function QuestionCard({ problem }: { problem: Problem }) {
         {problem.id}. {problem.title}
       </p>
 
-      {/* Language Toggle Buttons */}
       <div className="flex gap-2 mb-4">
         <button
           onClick={() => toggleAnswer("cpp")}
@@ -55,7 +53,6 @@ function QuestionCard({ problem }: { problem: Problem }) {
         </button>
       </div>
 
-      {/* Answer Block */}
       <div
         className={`transition-all duration-500 ease-in-out overflow-hidden ${
           activeLang ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"
@@ -71,7 +68,6 @@ function QuestionCard({ problem }: { problem: Problem }) {
   );
 }
 
-// 3. The Main Page Component
 export default function Problems() {
   const problemsData: Problem[] = [
     {
@@ -1299,6 +1295,7 @@ infix_to_postfix(exp)`
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white p-6 font-sans">
       <div className="max-w-4xl mx-auto">
+        <Navbar/>
         <div className="border-b-4 border-white/20 pb-4 mb-8">
           <h2 className="text-4xl text-center font-bold tracking-wider">
             PRACTICE QUESTIONS

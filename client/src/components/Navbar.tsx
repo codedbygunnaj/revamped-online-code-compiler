@@ -18,6 +18,7 @@ export default function Navbar(){
             <Link to='/ide' className="hover:text-white transition-colors">IDE</Link>
             <Link to='/problems' className="hover:text-white transition-colors">Problems</Link>
             <Link to='/sub' className="hover:text-white transition-colors">Submissions</Link>
+            <Link to='/tutorials' className="hover:text-white transition-colors">Tutorials</Link>
             </div>
 
             {/* User profile / Actions */}
