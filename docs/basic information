@@ -1,0 +1,15 @@
+fgci: for gc's information.
+
+pip freeze > requirements.txt: This takes a snapshot of your exact current environment and writes every library (and its exact version) into requirements.txt. Later, when we deploy this to a Docker container, Docker will just read this file and instantly replicate your environment.
+
+pydantic: like typescript, we define a type of data or object and only that particular type is allowed, all other data would be restrcited from entering.
+
+We can share data in 3 ways in FastAPI:
+    -> path parameter: part of URL (To identify a specific resource)
+        eg: Example: GET /problems/42 -> 42 is path parameter (bring Problem ID 42).
+    -> query parameter: Sent @ end of url using "?" Majorly for filtering or Sorting
+        eg: Example: GET /problems?difficulty=hard -> Query parameter here is "hard"
+    -> req body: When data is Large || Insensitive, we don't see it in the url, but in the req body
+
+FastAPI = a main "Process" of backend and If we run our C++ || Other lang code in this, if code crash/lags --> whole BACKEND CRASHES :. we create "CHILD PROCESS" to avoid this;
+    -> use "SubProcess Library for the same"
