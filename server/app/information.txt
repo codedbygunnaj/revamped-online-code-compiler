@@ -1,0 +1,1 @@
+Main code resides in this "app" folder.

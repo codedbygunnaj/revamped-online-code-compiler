@@ -13,3 +13,10 @@ We can share data in 3 ways in FastAPI:
 
 FastAPI = a main "Process" of backend and If we run our C++ || Other lang code in this, if code crash/lags --> whole BACKEND CRASHES :. we create "CHILD PROCESS" to avoid this;
     -> use "SubProcess Library for the same"
+
+in app.POST("/run"): Try this json format to check if working or not:
+    {
+      "language": "cpp",
+      "code": "#include <iostream>\nusing namespace std;\nint main() {\n    cout << \"Hello\"\n    return 0;\n}",
+      "custom_input": ""
+    }
